@@ -18,8 +18,8 @@ namespace BL.Rentas
 
             var cliente1 = new Cliente();
             cliente1.id = 1;
-            cliente1.nombre = "Juan";
-            cliente1.correo = "juan@gmail.com";
+            cliente1.nombre = "Ricardo";
+            cliente1.correo = "ricardo@gmail.com";
             cliente1.telefono = "99999999";
             cliente1.direccion = "Bo. san fernando, sps";
             cliente1.activo = true;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace win.rentas.Properties
+namespace Win.Rentas.Properties
 {
 
 

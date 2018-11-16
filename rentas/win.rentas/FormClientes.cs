@@ -13,57 +13,36 @@ namespace Win.Rentas
 {
     public partial class FormClientes : Form
     {
-
-      ClientesBL _clientes;
+        ClientesBL _clientesBL;
 
         public FormClientes()
         {
             InitializeComponent();
 
-            _clientes = new ClientesBL();
-            listaClientesBindingSource.DataSource = _clientes.ObtenerClientes();
-        }
-
-        private void FormClientes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            deshabilitarhabilitarbotones(true);
-            eliminar(0);
+            _clientesBL = new ClientesBL();
+            listaClientesBindingSource.DataSource = _clientesBL.ObtenerClientes();
         }
 
         private void listaClientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaClientesBindingSource.EndEdit();
-            var cliente =(Cliente) listaClientesBindingSource.Current;
+            var cliente = (Cliente)listaClientesBindingSource.Current;
 
-            var resultado = _clientes.GuardarCliente(cliente);
+            var resultado = _clientesBL.GuardarCliente(cliente);
 
-            if(resultado.exitoso==true)
+            if (resultado.Exitoso == true)
             {
                 listaClientesBindingSource.ResetBindings(false);
-                deshabilitarhabilitarbotones(true);
+                DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Cliente guardado");
             }
             else
             {
-                MessageBox.Show(resultado.mensaje);
-
+                MessageBox.Show(resultado.Mensaje);
             }
-       
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            _clientes.agregarcliente();
-            listaClientesBindingSource.MoveLast();
-
-            deshabilitarhabilitarbotones(false);
-                }
-               
-        private void deshabilitarhabilitarbotones(bool valor)
+        private void DeshabilitarHabilitarBotones(bool valor)
         {
             bindingNavigatorMoveFirstItem.Enabled = valor;
             bindingNavigatorMoveLastItem.Enabled = valor;
@@ -73,40 +52,48 @@ namespace Win.Rentas
 
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
-            toolStripButton1.Visible = !valor;
-
+            toolStripButtonCancelar.Visible = !valor;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-          
-            
             if (idTextBox.Text != "")
             {
-              var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
+                var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-
                     var id = Convert.ToInt32(idTextBox.Text);
-                    eliminar(id);
-
+                    Eliminar(id);
                 }
             }
         }
 
-        private void eliminar(int id)
+        private void Eliminar(int id)
         {
-           
-                var resultado = _clientes.eliminarcliente(id);
+            var resultado = _clientesBL.EliminarCliente(id);
 
-                if (resultado == true)
-                {
-                    listaClientesBindingSource.ResetBindings(false);
-                }
-                else
-                {
-                    MessageBox.Show("No se puede elimina cliente");
-                }
+            if (resultado == true)
+            {
+                listaClientesBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al eliminar el Cliente");
+            }
+        }
+
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        {
+            _clientesBL.CancelarCambios();
+            DeshabilitarHabilitarBotones(true);
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            _clientesBL.AgregarCliente();
+            listaClientesBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
         }
     }
 }

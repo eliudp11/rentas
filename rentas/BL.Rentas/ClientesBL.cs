@@ -97,7 +97,10 @@ namespace BL.Rentas
         public string Correo { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        public byte[] Foto { get; set; }
         public bool Activo { get; set; }
+        public int CiudadId { get; set; }
+        public Ciudad Ciudad { get; set; }
 
         public Cliente()
         {

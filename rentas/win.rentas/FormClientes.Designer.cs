@@ -32,10 +32,11 @@
             System.Windows.Forms.Label activoLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             System.Windows.Forms.Label correoLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label telefonoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
+            System.Windows.Forms.Label ciudadIdLabel;
             this.listaClientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,19 +54,28 @@
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.correoTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaCiudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ciudadIdComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             correoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
+            ciudadIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingNavigator)).BeginInit();
             this.listaClientesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCiudadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -95,6 +105,33 @@
             nombreLabel.TabIndex = 5;
             nombreLabel.Text = "Nombre:";
             // 
+            // correoLabel
+            // 
+            correoLabel.AutoSize = true;
+            correoLabel.Location = new System.Drawing.Point(35, 136);
+            correoLabel.Name = "correoLabel";
+            correoLabel.Size = new System.Drawing.Size(41, 13);
+            correoLabel.TabIndex = 7;
+            correoLabel.Text = "Correo:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(21, 162);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 9;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(24, 108);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 11;
+            telefonoLabel.Text = "Telefono:";
+            // 
             // listaClientesBindingNavigator
             // 
             this.listaClientesBindingNavigator.AddNewItem = null;
@@ -122,7 +159,7 @@
             this.listaClientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaClientesBindingNavigator.Name = "listaClientesBindingNavigator";
             this.listaClientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaClientesBindingNavigator.Size = new System.Drawing.Size(509, 25);
+            this.listaClientesBindingNavigator.Size = new System.Drawing.Size(695, 25);
             this.listaClientesBindingNavigator.TabIndex = 0;
             this.listaClientesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -259,19 +296,6 @@
             this.nombreTextBox.Size = new System.Drawing.Size(195, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
-            // listaClientesBindingSource
-            // 
-            this.listaClientesBindingSource.DataSource = typeof(BL.Rentas.Cliente);
-            // 
-            // correoLabel
-            // 
-            correoLabel.AutoSize = true;
-            correoLabel.Location = new System.Drawing.Point(35, 136);
-            correoLabel.Name = "correoLabel";
-            correoLabel.Size = new System.Drawing.Size(41, 13);
-            correoLabel.TabIndex = 7;
-            correoLabel.Text = "Correo:";
-            // 
             // correoTextBox
             // 
             this.correoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaClientesBindingSource, "Correo", true));
@@ -279,15 +303,6 @@
             this.correoTextBox.Name = "correoTextBox";
             this.correoTextBox.Size = new System.Drawing.Size(195, 20);
             this.correoTextBox.TabIndex = 8;
-            // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(21, 162);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 9;
-            direccionLabel.Text = "Direccion:";
             // 
             // direccionTextBox
             // 
@@ -297,15 +312,6 @@
             this.direccionTextBox.Size = new System.Drawing.Size(195, 20);
             this.direccionTextBox.TabIndex = 10;
             // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(24, 108);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 11;
-            telefonoLabel.Text = "Telefono:";
-            // 
             // telefonoTextBox
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaClientesBindingSource, "Telefono", true));
@@ -314,11 +320,82 @@
             this.telefonoTextBox.Size = new System.Drawing.Size(195, 20);
             this.telefonoTextBox.TabIndex = 12;
             // 
+            // fotoPictureBox
+            // 
+            this.fotoPictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaClientesBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.fotoPictureBox.Location = new System.Drawing.Point(413, 43);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(181, 110);
+            this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPictureBox.TabIndex = 14;
+            this.fotoPictureBox.TabStop = false;
+            this.fotoPictureBox.Click += new System.EventHandler(this.fotoPictureBox_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(413, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Agregar Foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(511, 189);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 32);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Remover";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "jpg,png|*.jpg;*.png";
+            // 
+            // listaClientesBindingSource
+            // 
+            this.listaClientesBindingSource.DataSource = typeof(BL.Rentas.Cliente);
+            // 
+            // listaCiudadesBindingSource
+            // 
+            this.listaCiudadesBindingSource.DataSource = typeof(BL.Rentas.Ciudad);
+            // 
+            // ciudadIdLabel
+            // 
+            ciudadIdLabel.AutoSize = true;
+            ciudadIdLabel.Location = new System.Drawing.Point(21, 192);
+            ciudadIdLabel.Name = "ciudadIdLabel";
+            ciudadIdLabel.Size = new System.Drawing.Size(43, 13);
+            ciudadIdLabel.TabIndex = 16;
+            ciudadIdLabel.Text = "Ciudad:";
+            // 
+            // ciudadIdComboBox
+            // 
+            this.ciudadIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaClientesBindingSource, "CiudadId", true));
+            this.ciudadIdComboBox.DataSource = this.listaCiudadesBindingSource;
+            this.ciudadIdComboBox.DisplayMember = "Descripcion";
+            this.ciudadIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ciudadIdComboBox.FormattingEnabled = true;
+            this.ciudadIdComboBox.Location = new System.Drawing.Point(82, 189);
+            this.ciudadIdComboBox.Name = "ciudadIdComboBox";
+            this.ciudadIdComboBox.Size = new System.Drawing.Size(195, 21);
+            this.ciudadIdComboBox.TabIndex = 17;
+            this.ciudadIdComboBox.ValueMember = "Id";
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 310);
+            this.ClientSize = new System.Drawing.Size(695, 277);
+            this.Controls.Add(ciudadIdLabel);
+            this.Controls.Add(this.ciudadIdComboBox);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fotoPictureBox);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(direccionLabel);
@@ -337,7 +414,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingNavigator)).EndInit();
             this.listaClientesBindingNavigator.ResumeLayout(false);
             this.listaClientesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCiudadesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +445,11 @@
         private System.Windows.Forms.TextBox correoTextBox;
         private System.Windows.Forms.TextBox direccionTextBox;
         private System.Windows.Forms.TextBox telefonoTextBox;
+        private System.Windows.Forms.PictureBox fotoPictureBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.BindingSource listaCiudadesBindingSource;
+        private System.Windows.Forms.ComboBox ciudadIdComboBox;
     }
 }

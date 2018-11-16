@@ -46,7 +46,20 @@ namespace BL.Rentas
             tipo3.Descripcion = "Accesorios";
             contexto.Tipos.Add(tipo3);
 
-         
+
+            var ciudad1 = new Ciudad();
+            ciudad1.Descripcion = "San Pedro Sula";
+            contexto.Ciudades.Add(ciudad1);
+
+            var ciudad2 = new Ciudad();
+            ciudad2.Descripcion = "Tegucigalpa";
+            contexto.Ciudades.Add(ciudad2);
+
+            var ciudad3 = new Ciudad();
+            ciudad3.Descripcion = "La Ceiba";
+            contexto.Ciudades.Add(ciudad3);
+
+
             base.Seed(contexto);
         }
     }

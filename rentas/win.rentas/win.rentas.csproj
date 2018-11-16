@@ -192,6 +192,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Rentas.CategoriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.CiudadesBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ClientesBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />

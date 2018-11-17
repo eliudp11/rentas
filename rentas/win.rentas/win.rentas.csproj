@@ -105,6 +105,12 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProveedores.Designer.cs">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProveedores.resx">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRentas.resx">
       <DependentUpon>FormRentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,7 @@
     <None Include="Properties\DataSources\BL.Rentas.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ProveedoresBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.SeguridadBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.TiposBL.datasource" />
     <None Include="Properties\Settings.settings">

@@ -74,5 +74,12 @@ namespace Win.Rentas
             formReporteFacturas.MdiParent = this;
             formReporteFacturas.Show();
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formProveedores = new FormProveedores();
+            formProveedores.MdiParent = this;
+            formProveedores.Show();
+        }
     }
 }

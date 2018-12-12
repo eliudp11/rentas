@@ -36,5 +36,13 @@ namespace BL.Rentas
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Contrasena { get; set; }
+
+        public bool PuedeVerFacturas { get; set; }
+        public bool PuedeVerClientes { get; set; }
+        public bool PuedeVerProductos { get; set; }
+        public bool PuedeVerReportes { get; set; }
+        public bool PuedeVerCompras { get; set; }
+        public bool PuedeVerProveedores { get; set; }
+       
     }
 }

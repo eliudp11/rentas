@@ -140,5 +140,12 @@ namespace Win.Rentas
         {
             fotoPictureBox.Image = null;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormProductos frm = new FormProductos();
+            frm.Show();
+            this.Close();
+        }
     }
 }

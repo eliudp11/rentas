@@ -15,8 +15,15 @@ namespace BL.Rentas
             var usuarioAdmin = new Usuario();
             usuarioAdmin.Nombre = "admin";
             usuarioAdmin.Contrasena = "123";
+            usuarioAdmin.PuedeVerFacturas = true;
+            usuarioAdmin.PuedeVerClientes = false;
+            usuarioAdmin.PuedeVerProductos = false;
+            usuarioAdmin.PuedeVerReportes = true;
+            usuarioAdmin.PuedeVerProveedores = false;
+            usuarioAdmin.PuedeVerCompras = false;
 
             contexto.Usuarios.Add(usuarioAdmin);
+
 
             var categoria1 = new Categoria();
             categoria1.Descripcion = "Acción y Aventura";
@@ -48,15 +55,15 @@ namespace BL.Rentas
 
 
             var ciudad1 = new Ciudad();
-            ciudad1.Descripcion = "San Pedro Sula";
+            ciudad1.Descripcion = "SPS";
             contexto.Ciudades.Add(ciudad1);
 
             var ciudad2 = new Ciudad();
-            ciudad2.Descripcion = "Tegucigalpa";
+            ciudad2.Descripcion = "Choloma";
             contexto.Ciudades.Add(ciudad2);
 
             var ciudad3 = new Ciudad();
-            ciudad3.Descripcion = "La Ceiba";
+            ciudad3.Descripcion = "Cortes";
             contexto.Ciudades.Add(ciudad3);
 
 

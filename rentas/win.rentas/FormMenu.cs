@@ -30,6 +30,9 @@ namespace Win.Rentas
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+        
+
             var formProductos = new FormProductos();
             formProductos.MdiParent = this;
             formProductos.Show();
@@ -37,6 +40,8 @@ namespace Win.Rentas
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+
             var formClientes = new FormClientes();
             formClientes.MdiParent = this;
             formClientes.Show();
@@ -44,6 +49,8 @@ namespace Win.Rentas
 
         private void rentarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+
             var formRentas = new FormRentas();
             formRentas.MdiParent = this;
             formRentas.Show();
@@ -56,6 +63,10 @@ namespace Win.Rentas
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+
+            
+
             var formFactura = new FormFactura();
             formFactura.MdiParent = this;
             formFactura.Show();
@@ -63,6 +74,8 @@ namespace Win.Rentas
 
         private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+
             var formReporteProductos = new FormReporteProductos();
             formReporteProductos.MdiParent = this;
             formReporteProductos.Show();
@@ -77,6 +90,8 @@ namespace Win.Rentas
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+
             var formProveedores = new FormProveedores();
             formProveedores.MdiParent = this;
             formProveedores.Show();
@@ -84,6 +99,8 @@ namespace Win.Rentas
 
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+
             var formCompra = new FormCompra();
             formCompra.MdiParent = this;
             formCompra.Show();

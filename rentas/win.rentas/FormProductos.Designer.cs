@@ -35,8 +35,8 @@
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
             System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             System.Windows.Forms.Label tipoIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.listaProductosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.listaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -66,6 +66,7 @@
             this.listaTiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaProductosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tipoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -136,6 +137,15 @@
             label1.TabIndex = 16;
             label1.Text = "Categoria:";
             // 
+            // tipoIdLabel
+            // 
+            tipoIdLabel.AutoSize = true;
+            tipoIdLabel.Location = new System.Drawing.Point(19, 103);
+            tipoIdLabel.Name = "tipoIdLabel";
+            tipoIdLabel.Size = new System.Drawing.Size(31, 13);
+            tipoIdLabel.TabIndex = 19;
+            tipoIdLabel.Text = "Tipo:";
+            // 
             // listaProductosBindingNavigator
             // 
             this.listaProductosBindingNavigator.AddNewItem = null;
@@ -163,7 +173,7 @@
             this.listaProductosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaProductosBindingNavigator.Name = "listaProductosBindingNavigator";
             this.listaProductosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaProductosBindingNavigator.Size = new System.Drawing.Size(664, 25);
+            this.listaProductosBindingNavigator.Size = new System.Drawing.Size(671, 25);
             this.listaProductosBindingNavigator.TabIndex = 0;
             this.listaProductosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -381,15 +391,6 @@
             // 
             this.listaProductosBindingSource1.DataSource = typeof(BL.Rentas.Producto);
             // 
-            // tipoIdLabel
-            // 
-            tipoIdLabel.AutoSize = true;
-            tipoIdLabel.Location = new System.Drawing.Point(19, 103);
-            tipoIdLabel.Name = "tipoIdLabel";
-            tipoIdLabel.Size = new System.Drawing.Size(31, 13);
-            tipoIdLabel.TabIndex = 19;
-            tipoIdLabel.Text = "Tipo:";
-            // 
             // tipoIdComboBox
             // 
             this.tipoIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaProductosBindingSource, "TipoId", true));
@@ -403,11 +404,22 @@
             this.tipoIdComboBox.TabIndex = 20;
             this.tipoIdComboBox.ValueMember = "Id";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(175, 224);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(86, 24);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 281);
+            this.ClientSize = new System.Drawing.Size(671, 284);
+            this.Controls.Add(this.button3);
             this.Controls.Add(tipoIdLabel);
             this.Controls.Add(this.tipoIdComboBox);
             this.Controls.Add(this.button2);
@@ -473,5 +485,6 @@
         private System.Windows.Forms.BindingSource listaTiposBindingSource;
         private System.Windows.Forms.BindingSource listaProductosBindingSource1;
         private System.Windows.Forms.ComboBox tipoIdComboBox;
+        private System.Windows.Forms.Button button3;
     }
 }
